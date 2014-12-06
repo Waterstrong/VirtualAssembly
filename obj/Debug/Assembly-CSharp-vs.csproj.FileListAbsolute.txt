@@ -1,0 +1,11 @@
+E:\Projects\VirtualAssembly\Temp\bin\Debug\Assembly-CSharp.dll
+E:\Projects\VirtualAssembly\Temp\bin\Debug\Assembly-CSharp.pdb
+E:\Projects\VirtualAssembly\Temp\bin\Debug\UnityEditor.dll
+E:\Projects\VirtualAssembly\Temp\bin\Debug\UnityEngine.dll
+E:\Projects\VirtualAssembly\Temp\bin\Debug\Mono.Cecil.dll
+E:\Projects\VirtualAssembly\Temp\bin\Debug\nunit.framework.dll
+E:\Projects\VirtualAssembly\Temp\bin\Debug\Unity.DataContract.dll
+E:\Projects\VirtualAssembly\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+E:\Projects\VirtualAssembly\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\VirtualAssembly\obj\Debug\Assembly-CSharp.dll
+E:\Projects\VirtualAssembly\obj\Debug\Assembly-CSharp.pdb
