@@ -24,6 +24,8 @@ public class HandUIAdaptive : MonoBehaviour {
     /// <returns></returns>
     public bool Adaptive(SkeletonWrapper sw, int player)
     {
+        if (!gameObject.activeSelf) return false;
+
         if (sw.rawBonePos[player, (int)JointType.HandRight].y > sw.rawBonePos[player, (int)JointType.Spine].y)
         {
             rightHandStatus = true;
@@ -90,5 +92,11 @@ public class HandUIAdaptive : MonoBehaviour {
             }
         }
         return true;
+    }
+
+    public void ShowSelf(bool isShow) {
+        if ((isShow && !gameObject.activeSelf) || (!isShow && gameObject.activeSelf)) {
+            gameObject.SetActive(isShow);
+        }
     }
 }
