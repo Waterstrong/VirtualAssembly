@@ -20,7 +20,14 @@ namespace NUI.Motion
         HandLeftUp,
         HandRightUp,
         HandLeftCircle,
-        HandRightCircle
+        HandRightCircle,
+        FootLeftUp,
+        FootRightUp,
+        HandLeftDown,
+        HandRightDown,
+        HandsDown,
+        LegLeftUp,
+        LegRightUp
     }
 
     /// <summary>
