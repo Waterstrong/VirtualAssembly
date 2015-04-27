@@ -76,6 +76,8 @@ public class KinectInteractionController : MonoBehaviour{
                 Debug.Log("HandsFold");
                 break;
             case MotionType.HandLeftUp: // 左手向上
+                nuiElementPress.TurnOver(-1);
+                break;
             case MotionType.HandRightUp: // 右手向上
                 Debug.Log("Hand L&R Up");
                 nuiElementPress.StopRotate();
@@ -84,6 +86,12 @@ public class KinectInteractionController : MonoBehaviour{
             case MotionType.HandRightCircle: // 右手划圆
                 nuiElementPress.OnSwitchInteractionPress();
                 Debug.Log("HandRightCircle");
+                break;
+            case MotionType.HandLeftDown:
+                Debug.Log("HandLeftDown");
+                break;
+            case MotionType.HandRightDown:
+                Debug.Log("HandRightDown");
                 break;
             default:
                 break;

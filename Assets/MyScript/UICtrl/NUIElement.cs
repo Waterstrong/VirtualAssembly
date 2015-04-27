@@ -47,6 +47,7 @@ public class NUIElement : MonoBehaviour
     public Vector3 hoverScale = new Vector3(1.1f, 1.1f, 1.1f);
     public Vector3 pressedScale = new Vector3(1.05f, 1.05f, 1.05f);
     Vector3 mScale;
+    Vector3 mPosition;
 
     public float duration = 0.2f;
 
@@ -66,9 +67,12 @@ public class NUIElement : MonoBehaviour
         UISprite uiSprite = tweenTarget.GetComponent<UISprite>();
         if (uiSprite != null) normalColor = uiSprite.color;
         mScale = tweenTarget.transform.localScale; // store scale
+        mPosition = tweenTarget.transform.localPosition;
     }
 
     bool pressed = false;
+
+
 
     /// <summary>
     /// on nui hand press
@@ -111,8 +115,10 @@ public class NUIElement : MonoBehaviour
                 EventDelegate.Execute(onElementRelease);
 
                 tweenTarget.SetActive(false);
+                tweenTarget.transform.localPosition = mPosition;
                 current = null;
             }
+            pressed = false;
         }
         
     }

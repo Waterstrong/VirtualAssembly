@@ -31,7 +31,8 @@ namespace NUI.Motion
                                                  new HandsFold(), new HandsMiddle(),
                                                   new HandLeftSlide(), new HandRightSlide(),
                                                    new HandLeftUp(), new HandRightUp(),
-                                                   new HandLeftCircle(),  new HandRightCircle() }; // Waterstrong Alter
+                                                   new HandLeftCircle(),  new HandRightCircle(),
+                                                   new HandLeftDown(), new HandRightDown() }; // Waterstrong Alter
                 int count = 0;
                 //foreach (string name in motionNames) // 设置职责链
                 foreach (MotionSuper motion in motionSupers) // 设置职责链 // Waterstrong Alter

@@ -23,7 +23,7 @@ public class NUIElementPress : MonoBehaviour {
 
     GameObject[] carComponents;
 
-    GameObject component;
+    GameObject[] componentIcons;
 
     Quaternion rawRotation;
     
@@ -37,8 +37,10 @@ public class NUIElementPress : MonoBehaviour {
 
         carComponents = GameObject.FindGameObjectsWithTag("car");
 
-        component = GameObject.FindGameObjectWithTag("component");
-        component.SetActive(isAssembling);
+        componentIcons = GameObject.FindGameObjectsWithTag("component");
+        foreach(GameObject obj in componentIcons) {
+            obj.SetActive(isAssembling);
+        }
 
         rawRotation = audiCar.transform.rotation;
 	}
@@ -113,7 +115,10 @@ public class NUIElementPress : MonoBehaviour {
             gameobject.SetActive(!isAssembling);
         }
 
-        component.SetActive(isAssembling);
+        foreach (GameObject obj in componentIcons)
+        {
+            obj.SetActive(isAssembling);
+        }
 
     }
 

@@ -17,7 +17,6 @@ public class SelfRotate : MonoBehaviour {
     }
 
     public void TurnOver(int turn) {
-        Debug.Log("ture over");
-        //transform.Rotate(0, 90, 0);
+        transform.Rotate(turn * Vector3.down * speed * 1.5f);
     }
 }
