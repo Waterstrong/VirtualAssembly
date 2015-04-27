@@ -51,25 +51,28 @@ public class KinectInteractionController : MonoBehaviour{
             case MotionType.None:
                 break;
             case MotionType.Jump: // 起跳
+                nuiElementPress.TurnOver(1);
                 Debug.Log("Jump");
                 break;
             case MotionType.HandLeftSlide: // 左滑动
                 Debug.Log("LeftSlide");
-                nuiElementPress.ClockwiseRotate();
+                nuiElementPress.Rotate(1);
                 break;
             case MotionType.HandRightSlide: // 右滑动
                 Debug.Log("RightSlide");
-                nuiElementPress.AnticlockwiseRotate();
+                nuiElementPress.Rotate(-1);
                 break;
             case MotionType.HandsUp: // 举手
                 Debug.Log("HandsUp");
                 break;
             case MotionType.HandsMiddle: // 双手水平展开
                 //promptUiCtrl.Show("双手水平展开");
+                nuiElementPress.Zoom(1);
                 Debug.Log("HandsMiddle");
                 break;
             case MotionType.HandsFold: // 双手水平收缩
                 //promptUiCtrl.Show("双手水平收缩");
+                nuiElementPress.Zoom(-1);
                 Debug.Log("HandsFold");
                 break;
             case MotionType.HandLeftUp: // 左手向上
@@ -78,9 +81,8 @@ public class KinectInteractionController : MonoBehaviour{
                 nuiElementPress.StopRotate();
                 break;
             case MotionType.HandLeftCircle: // 左手划圆
-                Debug.Log("HandLeftCircle");
-                break;
             case MotionType.HandRightCircle: // 右手划圆
+                nuiElementPress.OnSwitchInteractionPress();
                 Debug.Log("HandRightCircle");
                 break;
             default:

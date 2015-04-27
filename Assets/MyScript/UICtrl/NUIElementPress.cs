@@ -15,11 +15,15 @@ public class NUIElementPress : MonoBehaviour {
         get { return isGestureCtrolling; }
     }
 
+    private bool isAssembling = false;
+
     GameObject audiCar;
 
     SelfRotate selfRotate = null;
 
     GameObject[] carComponents;
+
+    GameObject component;
 
     Quaternion rawRotation;
     
@@ -33,6 +37,9 @@ public class NUIElementPress : MonoBehaviour {
 
         carComponents = GameObject.FindGameObjectsWithTag("car");
 
+        component = GameObject.FindGameObjectWithTag("component");
+        component.SetActive(isAssembling);
+
         rawRotation = audiCar.transform.rotation;
 	}
 	
@@ -41,17 +48,19 @@ public class NUIElementPress : MonoBehaviour {
 	
 	}
 
-    public void ClockwiseRotate() {
-        selfRotate.speed = Mathf.Abs(selfRotate.speed);
+    public void Rotate(int rotate) {
+        selfRotate.speed = rotate*Mathf.Abs(selfRotate.speed);
         selfRotate.enabled = true;
     }
 
-
-    public void AnticlockwiseRotate()
-    {
-        selfRotate.speed = -Mathf.Abs(selfRotate.speed);
-        selfRotate.enabled = true;
+    public void Zoom(int zoom) {
+        selfRotate.Zoom(zoom);
     }
+
+    public void TurnOver(int turn) {
+        selfRotate.TurnOver(turn);
+    }
+
 
     public void StopRotate() {
         selfRotate.enabled = false;
@@ -96,11 +105,16 @@ public class NUIElementPress : MonoBehaviour {
     public void OnCarAssemblePress()
     {
         //audiCar.transform.rotation = rawRotation;
+        isAssembling = !isAssembling;
+        bool res = isAssembling ? assembleButtonCtrl.ChangeCaption("还 原") : assembleButtonCtrl.ChangeCaption("装 配");
 
         foreach (GameObject gameobject in carComponents)
         {
-            gameobject.SetActive(false);
+            gameobject.SetActive(!isAssembling);
         }
+
+        component.SetActive(isAssembling);
+
     }
 
     int index = 0;
